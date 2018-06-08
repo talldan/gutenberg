@@ -55,6 +55,7 @@ class InnerBlocks extends Component {
 			layouts,
 			allowedBlocks,
 			template,
+			templateLock,
 			isSmallScreen,
 			isSelectedBlockInRoot,
 		} = this.props;
@@ -67,7 +68,7 @@ class InnerBlocks extends Component {
 			<div className={ classes }>
 				<BlockList
 					rootUID={ uid }
-					{ ...{ layouts, allowedBlocks, template } }
+					{ ...{ layouts, allowedBlocks, template, templateLock } }
 				/>
 			</div>
 		);
