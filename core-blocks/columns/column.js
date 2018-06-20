@@ -15,7 +15,7 @@ export const name = 'core/column';
 export const settings = {
 	title: __( 'Column' ),
 
-	supportedBlocks: [ 'core/columns' ],
+	parent: [ 'core/columns' ],
 
 	icon: 'columns',
 
