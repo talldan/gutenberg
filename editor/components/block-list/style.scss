@@ -74,10 +74,9 @@
 		}
 	}
 
-	&[draggable=true]{
-		cursor: move; // Fallback for IE/Edge < 14
-		cursor: grab;
-	}
+
+	cursor: move; // Fallback for IE/Edge < 14
+	cursor: grab;
 }
 
 
@@ -930,5 +929,26 @@
 
 	.rtl & {
 		content: '←';
+	}
+}
+
+.editor-block-list__block {
+	@include break-small {
+		// use a wider available space for hovering/selecting on top level blocks
+		&:before {
+			content: '';
+			position: absolute;
+			right: -$parent-block-padding - $block-padding;
+			left: -$parent-block-padding - $block-padding;
+
+			bottom: 0;
+			top: 0;
+		}
+
+		// use smaller space for hovering/selecting on child blocks
+		& &:before {
+			left: 0;
+			right: 0;
+		}
 	}
 }
