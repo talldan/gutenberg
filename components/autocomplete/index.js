@@ -243,6 +243,9 @@ export class Autocomplete extends Component {
 			range.setStartAfter( child );
 		}
 		range.deleteContents();
+		if ( undefined !== this.props.onChange ) {
+			this.props.onChange();
+		}
 	}
 
 	select( option ) {
@@ -263,7 +266,6 @@ export class Autocomplete extends Component {
 				( undefined === completion.action || undefined === completion.value ) ?
 					{ action: 'insert-at-caret', value: completion } :
 					completion;
-
 			if ( 'replace' === action ) {
 				onReplace( [ value ] );
 			} else if ( 'insert-at-caret' === action ) {

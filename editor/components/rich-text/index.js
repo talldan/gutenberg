@@ -887,7 +887,7 @@ export class RichText extends Component {
 						{ formatToolbar }
 					</div>
 				) }
-				<Autocomplete onReplace={ this.props.onReplace } completers={ autocompleters }>
+				<Autocomplete onReplace={ this.props.onReplace } onChange={ this.onChange } completers={ autocompleters }>
 					{ ( { isExpanded, listBoxId, activeId } ) => (
 						<Fragment>
 							<TinyMCE
