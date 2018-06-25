@@ -40,6 +40,10 @@
 		> [data-type="core/column"] {
 			flex: 1;
 			width: 0;
+
+			&.is-selected > .editor-block-list__block-edit {
+				height: calc( 100% - #{ 2 * $block-padding } );
+			}
 		}
 	}
 }
